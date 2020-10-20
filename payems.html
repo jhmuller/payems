@@ -13,10 +13,13 @@
 
 <body class="blue-back bondy-font">
   <div class="thick-margins">
-<p class="p-center" id="h1">  Predicting the jobs report numbers  </p>
-<P><A href="#Part2">Part 2</A>
-<p class="p-center" id="h1">  Part 1 </p>
-<p id="h3"> Introduction & Overview </p>
+<p class="p-center head1" >  Predicting the US jobs report numbers  </p>
+
+
+<!--- -->
+
+<p class="head2 Part1" id="h2">  Part 1: Introduction and Overview </p>
+<p class="head3"> What </p>
 This is the first of a series of posts in which I plan to talk about a real world prediction problem,
 predicting one of the monthly government macro economic values.
 In particular, I will look at predicting the number of jobs added by US employers in a given month.
@@ -27,14 +30,6 @@ in the prior month.  For example, the value published on Friday 2020-10-02 gives
 of the number of jobs added in September 2020. The number are published in a report currently called
 the <a target="_blank" href="https://www.bls.gov/news.release/empsit.toc.htm">Employment Situation</a>.
 <br id="sp"> <br>
-Both the stock and bond markets can react to the published value, epsecially when it is unexpected.
-Back in 2007 I worked in the investment group of a large bank and I recall that when the numbers
-came out, usually around 8:30 AM New York time, they were announced for all the traders to hear.
-As evidence of the potential impact see <a target="_blank" href="https://www.investopedia.com/articles/04/092204.asp">here</a>,
-<a target="_blank" href="https://www.coursera.org/lecture/financial-markets-intro/1-jobs-report-countrys-fuel-nuAhi">here</a>,
-<a target="_blank" href="https://www.thebalance.com/the-monthly-jobs-report-and-its-impact-on-the-bond-market-416878">here</a>,
-or better still just google it.
-
 There are actually many numbers in the report the BLS publishes with two main types, unemployment and jobs added.
 The unemployment numbers come from a survey of households and the jobs numbers
 come from a survey of businesses.
@@ -43,8 +38,38 @@ and then many further breakdowns by industry type and other things.
  Suffice it to say that there is a lot of data in the report but I am only going to focus on
  the number of <em> private </em> jobs added in a month. The reason to focus on private and not the sum of private and government
  is becuase of some other data I want to use and it only covers private jobs.
+<br>
 
-<p id="h3"> The Data </p>
+<p class="head3"> Why </p>
+Why do this?  For me it's to practice data science with real data on an important problem.
+The jobs number is one of the measures of the health of the economy.
+I'm writing this in October 2020 with a presidential election coming next month.
+The report released on October 2nd got a lot of attention in the press.
+Both the stock and bond markets pay attention to the releases too.
+Back in 2007 I worked in the investment group of a large bank and I recall that when the numbers
+came out, usually around 8:30 AM New York time, they were announced for all the traders to hear.
+As evidence of the potential impact on the markets see <a target="_blank" href="https://www.investopedia.com/articles/04/092204.asp">here</a>,
+<a target="_blank" href="https://www.coursera.org/lecture/financial-markets-intro/1-jobs-report-countrys-fuel-nuAhi">here</a>,
+<a target="_blank" href="https://www.thebalance.com/the-monthly-jobs-report-and-its-impact-on-the-bond-market-416878">here</a>,
+or better still just google it.
+<br>
+You might ask <en>WHy not just predict the S&P 500 or something like that</em> if we are interested in the markets.
+  Well, we might get to that later.
+Some potential methods are described in the papers listed below.
+<ul>
+  <li> Generative Adversarial Network for Stock Market price Prediction </li>
+  <li> EMPIRICAL ASSET PRICING VIA MACHINE LEARNING</li>
+</ul>
+
+
+<p class="head3"> How </p>
+I plan to use a variety of techniques including Time Series Regression, Ensemble methods such as Random Forests and/or Boosting, and hopefully Neural Networks.
+I'm interested not only in how they perform out of sample but also how hard it is to build the models,
+how interpretable the model is.
+
+
+<p  class="head2"> Part 2: Data</p>
+<p class="head3"> Data Sources </p>
 You can get the current value and some historical values from the BLS site, but I am going to
 use a different source, the St. Federal Reserve Economic Data site referred to as
 <a target="_blank" href="https://fred.stlouisfed.org/"> FRED </a>.
@@ -71,12 +96,6 @@ unemployment insurance claims.
 The claims data is published weekly so we will have to deal with data at different frequencies.
 And guess what ... we can get those from FRED.
 <br><br>
-<!---
-Another value that might be interesting to try as a predictor is GDP.
-In the US GDP is calculated quarterly by the U.S. Bureau of Economic Analysis.
-Not to worry about that since we can get it from FRED.
-GDP is available quarterly so again we have a different frequency to deal with.
--->
 
 There is a payroll processing company called ADP that produces something similar to the jobs numbers
 based on their proprietary data, but they don't have estimates for government jobs which is why
@@ -107,7 +126,7 @@ how many people are looking for work. But what other terms should we use other t
 The papers suggests using Google's Keyword Planner to find other related terms.
 It should be fun.
 
-<p id="h4"> Other Sources </p>
+<p class="head4"> Other Sources </p>
 I'm sure there are many other variables I could use.  A researcher from the The St. Louis Fed maintains a special set of over 100 monthly economic variables
 mainly for researchers to use.  Read about it <a target="_blank" href="https://research.stlouisfed.org/wp/more/2015-012"> here.</a>
 I don't want to use that since I believe it has the updated values of releases, not the original values.
@@ -115,15 +134,20 @@ I want to use the values that first came out in case there were revisions.
 
 The <a target="_blank" href="https://www.conference-board.org/us/">Conference Board</a> is the source of some widely used economic data including the Leading Economic Indicators.
 I am not going to use those since I belive you have to subscribe to get them.
-<p id="Part2"> </P>
-<p class="p-center"  id="h1">  Part 2 </p>
-<p id="h3"> Getting the data </p>
-As I mentioned above, all the data will come from FRED except the Michigan survey data which I will download
+
+<p class="head3"> Getting the data </p>
+As I mentioned above, much of the traditional data will come from FRED except the Michigan survey data which I will download
 from the survey site.  So how do we get data from Fred.
-<br><br>
 
+<p class="head4"> FRED data via Python </p>
 
+<p class="head4"> Google Trends  </p>
 
+<br>
+
+<p class="head2">  Part 3:  Modeling </p>
+<p class="head3">  Time Series Regression </p>
+<p class="head3">  Random Forest Regression </p>
 </div>
 </body>
 </html>

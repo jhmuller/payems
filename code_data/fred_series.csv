@@ -1,0 +1,13 @@
+series_id,description
+USPRIV, BLS private
+NPPTTL, ADP
+ICSA, Initial Claims
+CCSA, Continued Claims 
+JTS1000JOL, Job Openings: Total Private
+JTS1000HIL,  Hires: Total Private 
+JTS1000TSL,  Total Separations: Total Private 
+GDPC1, Real Gross Domestic Product
+UMCSENT,  University of Michigan: Consumer Sentiment
+CIVPART, Labor Force Participation Rate 
+CLF16OV, Civilian Labor Force Level 
+LES1252881600Q, Employed full time: Median usual weekly real earnings: Wage and salary workers: 16 years and over

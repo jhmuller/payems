@@ -1,18 +1,27 @@
 .body-font {
         font-size: 62.5%;
 }
-#h1 {
+
+a {
+  font-weight:bold;
+  background-color: 'black';
+}
+.head1 {
     font-size: 3em!important;
 }
-#h2 {
-    font-size: 2.66em!important;
+.head2 {
+    font-size: 2.4em!important;
 }
-#h3 {
-    font-size: 2.33em!important;
+.head3 {
+    font-size: 1.9em!important;
 }
-#h4 {
-    font-size: 2em!important;
+.head4 {
+    font-size: 1.5em!important;
 }
+.head5 {
+    font-size: 1.25em!important;
+}
+
 .blue-back {
   background-color: rgba(150,150,250, 0.9);
   length: 100% ;
