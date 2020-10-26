@@ -1,0 +1,10 @@
+series_id,description
+USPRIV, BLS private
+NPPTTL, ADP
+ICSA, Initial Claims
+CCSA, Continued Claims 
+JTS1000JOL, Job Openings: Total Private
+JTS1000HIL,  Hires: Total Private 
+JTS1000TSL,  Total Separations: Total Private 
+CSCICP03USM665S, OECD US Consumer Confidence
+BSCICP03USM665S, OECD Business Confidence
